@@ -1,0 +1,18 @@
+// Design a sample JSON document that will represent a One-to-Many relationship in a non relational database such as MongoDB.
+{
+  "_id": 1,
+  "name": "Ryan Edquila",
+  "email": "ryanedquila@example.com",
+  "posts": [
+    {
+      "_id": 1,
+      "title": "First Post",
+      "body": "Hello world!"
+    },
+    {
+      "_id": 2,
+      "title": "Second Post",
+      "body": "Hello world!"
+    }
+  ]
+}

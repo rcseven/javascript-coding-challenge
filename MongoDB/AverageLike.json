@@ -1,0 +1,17 @@
+// Create an aggregation query to get the average ‘like’ of post per day
+db.collection.aggregate([
+  {
+    // $group stage to group documents by the year, month, and day of the timestamp field.
+    $group: {
+      _id: {
+        // We use the $toDate operator to convert the timestamp to a date object
+        // $year, $month, and $dayOfMonth operators to extract the corresponding values.
+        year: { $year: { $toDate: "$timestamp" } },
+        month: { $month: { $toDate: "$timestamp" } },
+        day: { $dayOfMonth: { $toDate: "$timestamp" } },
+      },
+      //   Next, we calculate the average number of likes for each group using the $avg operator on the likes field.
+      totalLikes: { $avg: "$likes" },
+    },
+  },
+]);

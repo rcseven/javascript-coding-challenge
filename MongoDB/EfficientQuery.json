@@ -1,0 +1,9 @@
+{
+  "_id": ObjectId("61f7a3c6fa7843a3fb877a67"),
+  "createdAt": ISODate("2022-01-31T12:25:00.000Z"),
+  "data": {
+    "field1": "value1",
+    "field2": "value2",
+    "field3": "value3"
+  }
+}

@@ -1,0 +1,15 @@
+// Create an aggregate query that will count the total number of SMS by 132 bytes per count
+
+db.collection.aggregate([
+  {
+    $group: {
+      _id: null,
+      smsCount: {
+        //  get the length of the 'sms' field in bytes
+        //  divide the value by using $divide operator, and apply the $ceil to have an whole number
+        // $sum operator to add up the number of SMS messages across all documents
+        $sum: { $ceil: { $divide: [{ $strLenBytes: "$sms" }, 132] } },
+      },
+    },
+  },
+]);

@@ -1,0 +1,6 @@
+// updateOne() to update the specified _id and items.name to sellect "Apple"
+db.collection.updateOne(
+  { "_id": ObjectId("56902f7f31de51cdcfc03f07"), "items.name": "Apple" },
+//   $inc operator to increment the 'count' field of the matching item by 1
+  { $inc: { "items.$.count": 1 } }
+)
