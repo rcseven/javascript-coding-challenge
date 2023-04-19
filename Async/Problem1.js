@@ -6,24 +6,12 @@ function job() {
   });
 }
 
-async function runJob() {
-  try {
-    const data = await job();
-    console.log(data);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-module.exports = job;
-
-// Example usage
-const myJob = require("./path/to/my/job");
-
 async function runMyJob() {
   try {
-    const data = await myJob();
+    console.log("Start");
+    const data = await job();
     console.log(data);
+    console.log("End");
   } catch (err) {
     console.error(err);
   }
